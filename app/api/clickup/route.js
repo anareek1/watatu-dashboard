@@ -24,7 +24,7 @@ async function fetchTasks(token, teamId, spaceId, includeClosed) {
     });
     try {
       const res = await fetch(`${CLICKUP_API}/team/${teamId}/task?${params}`, {
-        headers: { Authorization: token },
+        headers: { 'Authorization': 'Bearer ' + token },
       });
       if (!res.ok) break;
       const data = await res.json();
